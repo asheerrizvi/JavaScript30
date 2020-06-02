@@ -32,8 +32,7 @@
     function numberWithCommas(x) {
       return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     }
-
-
+    
     function displayMatches() {
       const matchedPlaces = findMatches(this.value, cities);
       const html = matchedPlaces.map(place => {
