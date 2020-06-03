@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Console Tricks!</title>
 </head>
+
 <body>
 
   <p onClick="makeGreen()">×BREAK×DOWN×</p>
@@ -18,29 +20,77 @@
     }
 
     // Regular
+    console.log('hello');
 
     // Interpolated
+    const str = 'loooong';
+    console.log('Hello I am a %s string!', str);
+    console.log(`Hello I am a ${str} string!`);
 
     // Styled
+    console.log('%c I am some great text', 'font-size: 20px; background: red;');
 
     // warning!
+    console.warn('A WARNING!!');
 
     // Error :|
+    console.error('Holy SHITTTTTTTT!');
 
     // Info
+    console.info('This stuff is WILDDD!');
 
     // Testing
+    console.assert(1 === 2, 'This is wrong!');
+    const p = document.querySelector('p');
+
+    console.assert(p.classList.contains('ouch'), 'This is wrong!');
 
     // clearing
+    // console.clear();
 
     // Viewing DOM Elements
+    console.log(p);
+    console.dir(p);
 
     // Grouping together
+    dogs.forEach(dog => {
+      console.group(`${dog.name}`);
+      console.log(`This is ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age} years old!`);
+      console.groupEnd(`${dog.name}`);
+    });
+
+    dogs.forEach(dog => {
+      console.groupCollapsed(`${dog.name}`);
+      console.log(`This is ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age} years old!`);
+      console.groupEnd(`${dog.name}`);
+    });
 
     // counting
+    console.count('Wes');
+    console.count('Wes');
+    console.count('Wes');
+    console.count('Josh');
+    console.count('Wes');
+    console.count('Josh');
+    console.count('Josh');
+    console.count('Josh');
+    console.count('Wes');
 
     // timing
+    console.time('Fetching data');
+    fetch('https://api.github.com/users/asheerrizvi')
+      .then(blob => blob.json())
+      .then(data => {
+        console.timeEnd('Fetching data');
+        console.log(data);
+      });
+
+    // table
+    console.table(dogs);
 
   </script>
 </body>
+
 </html>
